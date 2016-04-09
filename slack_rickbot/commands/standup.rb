@@ -8,8 +8,10 @@ module SlackMathbot
 
       def self.call_for_standup(caller)
         message = "<@#{caller}> says, time for an adventure...\n"
+        random_start = random_members.sample
         random_members.each do |member|
-          message << "- <@#{member}>\n"
+          pre = (member == random_start) ? 'Starts:' : '*'
+          message << "#{pre} <@#{member}>\n"
         end
         message
       end
