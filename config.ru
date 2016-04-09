@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'dotenv'
 Dotenv.load
 
-require 'slack-rickbot'
+require 'slack_rickbot'
 require 'web'
 
 Thread.abort_on_exception = true

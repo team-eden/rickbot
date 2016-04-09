@@ -1,23 +1,24 @@
 module SlackMathbot
   module Commands
     class Standup < SlackRubyBot::Commands::Base
-      @message = call_for_standup
       command 'standup' do |client, data, _match|
-        client.say(channel: data.channel, text: @message)
+        caller = data.user
+        client.say(channel: data.channel, text: call_for_standup(caller))
       end
 
-      def call_for_standup
-        message = "Time for an adventure...\n"
+      def self.call_for_standup(caller)
+        message = "<@#{caller}> says, time for an adventure...\n"
         random_members.each do |member|
-          message << "> #{member}\n"
+          message << "- <@#{member}>\n"
         end
+        message
       end
 
-      def random_members
+      def self.random_members
         standup_members.shuffle
       end
 
-      def standup_members
+      def self.standup_members
         ['aaron', 'linden', 'yockey', 'mattv']
       end
     end
