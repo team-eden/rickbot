@@ -1,6 +1,6 @@
 module SlackMathbot
   module Commands
-    class Standup < SlackRubyBot::Commands::Base
+    class Team < SlackRubyBot::Commands::Base
       command 'standup' do |client, data, _match|
         caller = data.user
         client.say(channel: data.channel, text: call_for_standup(caller))
