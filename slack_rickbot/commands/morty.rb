@@ -1,4 +1,4 @@
-module SlackMathbot
+module SlackRickbot
   module Commands
     class Morty < SlackRubyBot::Commands::Base
       @responder = "Morty: "

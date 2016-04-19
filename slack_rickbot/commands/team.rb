@@ -1,4 +1,4 @@
-module SlackMathbot
+module SlackRickbot
   module Commands
     class Team < SlackRubyBot::Commands::Base
       command 'standup' do |client, data, _match|

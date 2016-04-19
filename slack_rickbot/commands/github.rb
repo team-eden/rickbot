@@ -1,4 +1,4 @@
-module SlackMathbot
+module SlackRickbot
   module Commands
     class Github < SlackRubyBot::Commands::Base
 
